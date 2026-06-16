@@ -25,8 +25,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+
+
       <body className="min-h-full flex flex-col">
-        {children}
+        <nav style={{
+          display: "flex",
+          gap: "15px",
+          padding: "15px",
+          borderBottom: "1px solid #ddd"
+        }}>
+          <a href="/">Home</a>
+          <a href="/students">Students</a>
+          <a href="/teachers">Teachers</a>
+          <a href="/parents">Parents</a>
+          <a href="/admin">Admin</a>
+        </nav>
+
+        <div style={{ padding: "20px" }}>
+          {children}
+        </div>
       </body>
     </html>
   );
