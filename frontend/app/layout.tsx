@@ -25,26 +25,35 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+<body style={{ margin: 0, fontFamily: "Arial" }}>
+  <div style={{ display: "flex", minHeight: "100vh" }}>
+
+    {/* Sidebar */}
+    <aside style={{
+      width: "220px",
+      padding: "20px",
+      borderRight: "1px solid #ddd"
+    }}>
+      <h2>Hollatech</h2>
+
+      <nav style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        <a href="/">🏠 Home</a>
+        <a href="/students">🎓 Students</a>
+        <a href="/teachers">👩‍🏫 Teachers</a>
+        <a href="/parents">👨‍👩‍👧 Parents</a>
+        <a href="/admin">⚙️ Admin</a>
+      </nav>
+    </aside>
+
+    {/* Main Content */}
+    <main style={{ flex: 1, padding: "20px" }}>
+      {children}
+    </main>
+
+  </div>
+</body>
 
 
-      <body className="min-h-full flex flex-col">
-        <nav style={{
-          display: "flex",
-          gap: "15px",
-          padding: "15px",
-          borderBottom: "1px solid #ddd"
-        }}>
-          <a href="/">Home</a>
-          <a href="/students">Students</a>
-          <a href="/teachers">Teachers</a>
-          <a href="/parents">Parents</a>
-          <a href="/admin">Admin</a>
-        </nav>
-
-        <div style={{ padding: "20px" }}>
-          {children}
-        </div>
-      </body>
     </html>
   );
 }
